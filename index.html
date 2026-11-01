@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff4f7">
+<meta name="description" content="Fourteen little love letters for Omotorera, one for every day leading up to her birthday.">
+<title>14 Days of U ♡ For Omotorera</title>
+<style>
+:root{--berry:#a33f60;--rose:#d26f91;--dark:#5c3341;--soft:#fff8fa;--cream:#fffdfb;--line:#f0cbd5;--muted:#896171}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 4%,#fffdfd 0,transparent 32%),radial-gradient(ellipse at 95% 12%,#f5cbd9 0,transparent 34%),linear-gradient(145deg,#fff6f9 0%,#fbe4ec 49%,#fff9f8 100%);color:var(--dark);font-family:Georgia,'Times New Roman',serif}
+body::before{content:'✦';position:absolute;top:64px;left:8%;font-size:22px;color:#d78da7;opacity:.5;pointer-events:none}
+body::after{content:'♡';position:absolute;top:110px;right:11%;font-size:34px;color:#d78da7;opacity:.43;pointer-events:none}
+button{font:inherit;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid #9e2b59;outline-offset:4px}
+.site{width:min(970px,92vw);margin:0 auto;padding:25px 0 65px}
+.mast{display:flex;align-items:center;justify-content:space-between;gap:15px;font:600 11px/1.4 Arial,sans-serif;letter-spacing:2.2px;text-transform:uppercase;color:#ab647e;border-bottom:1px solid #e6b9c8;padding:12px 2px 18px}
+.mast .little-heart{font-size:21px;letter-spacing:0;color:var(--berry);font-family:Georgia,serif}
+.hero{text-align:center;padding:58px 12px 22px}
+.eyebrow{font:700 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:3px;color:var(--berry)}
+h1{font-size:clamp(42px,7.9vw,76px);font-weight:400;letter-spacing:-2.5px;line-height:1.06;margin:19px 0 15px;color:#a93d5e}
+h1 em{font-weight:400;font-style:italic;color:#c56b88}
+.hero p{font-size:clamp(16px,2.4vw,19px);line-height:1.6;color:#7b5060;max-width:520px;margin:0 auto}
+.heart-row{font-size:19px;letter-spacing:17px;color:#bd5879;margin:22px 0 22px;padding-left:17px}
+.countdown{font:600 12px/1.5 Arial,sans-serif;letter-spacing:.5px;color:var(--berry);margin:0 0 18px}
+.progress{max-width:335px;height:7px;margin:0 auto 10px;border-radius:100px;background:#efd0dc;overflow:hidden}
+.progress span{display:block;background:linear-gradient(90deg,#e69ab5,#a94061);height:100%;width:0%;transition:width .55s ease}
+.progress-copy{font:12px Arial,sans-serif;color:#916b7a}
+.section-head{display:flex;align-items:center;gap:20px;margin:31px 0 18px}
+.section-head::before,.section-head::after{content:'';flex:1;height:1px;background:#e5b9c9}
+.section-head span{font:700 11px Arial,sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--berry);white-space:nowrap}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.door{position:relative;display:block;width:100%;height:220px;border:1px solid #e7b4c7;border-radius:20px;background:#f7e0e8;box-shadow:0 8px 24px #9d3b5d15;cursor:pointer;overflow:hidden;padding:0;color:inherit;text-align:center;perspective:1000px;transition:transform .2s ease,box-shadow .2s ease}
+.door:not(:disabled):hover{transform:translateY(-5px);box-shadow:0 15px 27px #9d3b5d22}
+.door:disabled{cursor:default}
+.interior{position:absolute;inset:7px;border-radius:15px;background:repeating-linear-gradient(-45deg,#fff8f7 0 9px,#fff1f5 9px 18px);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:11px;color:var(--berry)}
+.interior .note-icon{font-size:34px;line-height:1}
+.interior .interior-label{font:700 12px/1.4 Arial,sans-serif;letter-spacing:1.2px;text-transform:uppercase}
+.door-panel{position:absolute;inset:0;border-radius:18px;transform-origin:left center;transform:rotateY(0);transition:transform .8s cubic-bezier(.23,.65,.3,1),filter .35s;background:linear-gradient(140deg,#fff 0%,#ffeaf1 45%,#f5cade 100%);border:5px solid #f3cede;box-shadow:inset 0 0 0 1px #fff9;display:flex;flex-direction:column;align-items:center;justify-content:center;backface-visibility:hidden}
+.door-panel::before{content:'';position:absolute;inset:11px 10px;border:1px solid #e5a3bc;border-radius:98px 98px 12px 12px;pointer-events:none}
+.door-panel::after{content:'';position:absolute;top:48%;right:12px;width:8px;height:8px;background:#b75d7b;border:2px solid #fff4df;border-radius:50%;box-shadow:0 0 0 2px #cf8fa6}
+.door.locked .door-panel{background:linear-gradient(140deg,#fff7f9,#f4e1e8);filter:saturate(.65)}
+.door.opening .door-panel,.door.opened .door-panel{transform:rotateY(-109deg)}
+.door .day-number{position:relative;z-index:1;color:#ad4868;font:400 48px/1 Georgia,serif;letter-spacing:-2px;margin:0 0 8px}
+.door .day-tag{position:relative;z-index:1;font:700 10px Arial,sans-serif;text-transform:uppercase;letter-spacing:2px;color:#a5677d}
+.door .date-tag{position:relative;z-index:1;font:600 12px Arial,sans-serif;color:#946577;margin-top:9px}
+.door .lock-icon{position:relative;z-index:1;font-size:16px;margin-top:12px;opacity:.8}
+.door.unlocked .door-panel{background:linear-gradient(145deg,#fffefc,#ffe3ed 60%,#f9c9da)}
+.door.birthday .door-panel{background:linear-gradient(145deg,#fff7f0,#f6d8e4 65%,#efb5cd)}
+.door.birthday .day-number{color:#a52d57}
+.footer{text-align:center;padding:33px 15px 8px}
+.footer .first{font:italic 18px/1.6 Georgia,serif;color:#a43b60}
+.footer .small{font:12px/1.7 Arial,sans-serif;color:#986f7f;margin-top:10px}
+.overlay{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;background:#3d1426a8;padding:18px;overflow:auto}
+.overlay.visible{display:flex;animation:fadeIn .2s ease}
+.letter{width:min(565px,100%);max-height:calc(100dvh - 36px);overflow:auto;position:relative;border-radius:23px;padding:37px clamp(20px,5vw,43px) 29px;text-align:center;background:radial-gradient(circle at 0% 0%,#fff 0,transparent 58%),linear-gradient(145deg,#fffdfa,#fff4f7 90%);box-shadow:0 25px 85px #260a1c70;border:1px solid #f2c3d5;animation:letterRise .35s ease}
+.close{position:absolute;top:12px;right:14px;border:0;background:transparent;color:#a84968;font:32px/1 Arial,sans-serif;padding:4px 10px;cursor:pointer}
+.letter-icon{font-size:36px;line-height:1;margin-bottom:11px}
+.letter .date{font:700 11px Arial,sans-serif;letter-spacing:2.5px;text-transform:uppercase;color:#a9657e}
+.letter h2{font-size:clamp(28px,5vw,39px);font-weight:400;line-height:1.14;color:#ad3f60;margin:13px 0 9px}
+.letter .rule{color:#c36282;letter-spacing:10px;margin:13px 0}
+.letter-text{text-align:left;white-space:pre-wrap;overflow-wrap:anywhere;color:#654051;background:#fff;border:1px solid #f0d5de;box-shadow:0 4px 20px #9b4f6710;border-radius:14px;padding:22px;font-size:clamp(17px,2.7vw,19px);line-height:1.72;margin:12px 0 18px}
+.letter-text.special-code{text-align:center;font-size:35px;letter-spacing:3px;color:#aa3f61;padding:35px 15px}
+.letter .signoff{font:italic 16px/1.5 Georgia,serif;color:#9f5c74;margin:13px 0 19px}
+.next{border:1px solid #b95070;background:#b34b6c;border-radius:999px;color:white;padding:12px 26px;font:700 12px Arial,sans-serif;letter-spacing:.3px;cursor:pointer;min-height:43px}
+.next:hover{background:#983755}
+[hidden]{display:none!important}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes letterRise{from{transform:translateY(16px) scale(.97);opacity:0}to{transform:translateY(0) scale(1);opacity:1}}
+@media(max-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.door{height:195px}.hero{padding-top:45px}}
+@media(max-width:485px){.site{width:min(420px,92vw)}.mast{font-size:9px;letter-spacing:1.2px}.hero{padding:41px 5px 15px}h1{letter-spacing:-1.5px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.door{height:192px}.section-head{margin-top:27px}.letter{padding-top:35px}.door .day-number{font-size:44px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<main class="site">
+ <nav class="mast" aria-label="Birthday countdown"><span>To Omotorera, with love</span><span class="little-heart" aria-hidden="true">♡</span><span>01 — 14 November 2026</span></nav>
+ <header class="hero">
+  <div class="eyebrow">A little countdown made just for you</div>
+  <h1>14 Days of<br><em>U</em> ♡</h1>
+  <p>Fourteen little doors. Fourteen little reminders of how much you mean to me. A new love letter, every day until your birthday.</p>
+  <div class="heart-row" aria-hidden="true">♡ ♡ ♡</div>
+  <div id="countdown" class="countdown" aria-live="polite">One day at a time, my love.</div>
+  <div class="progress" role="progressbar" aria-label="Letters opened" aria-valuemin="0" aria-valuemax="14" aria-valuenow="0" id="progress"><span id="progressFill"></span></div>
+  <div class="progress-copy" id="progressText">14 little letters waiting for you</div>
+ </header>
+ <div class="section-head"><span>Choose a little door</span></div>
+ <section class="grid" id="grid" aria-label="14 daily love letter doors"></section>
+ <footer class="footer">
+  <div class="first">All of these words are yours. Always. ♡</div>
+  <div class="small">One door unlocks every day at midnight, UK time.<br>You can come back to any letter you've already unlocked.<br>Made especially for Omotorera.</div>
+ </footer>
+</main>
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="letterTitle" aria-hidden="true">
+ <article class="letter" id="letter">
+  <button class="close" type="button" id="close" aria-label="Close letter">&times;</button>
+  <div class="letter-icon" id="letterIcon" aria-hidden="true">💌</div>
+  <div class="date" id="letterDate">1 November</div>
+  <h2 id="letterTitle">A little letter for you</h2>
+  <div class="rule" aria-hidden="true">♡ ✦ ♡</div>
+  <div class="letter-text" id="letterText"></div>
+  <div class="signoff">Just for you, with love ♡</div>
+  <button class="next" id="next" type="button">Close this letter</button>
+ </article>
+</div>
+<noscript><p style="text-align:center;padding:20px">Please enable JavaScript to open your letters.</p></noscript>
+<script>
+'use strict';
+const messages = ["i know it’s been a difficult year for us and i just want you to know i appreciate you always and wanted to do this so u can feel it and know it .", "im not sure when you will open this so it’s either morning or evening but know your special and everything you do ur are amazing at it never doubt yourself.", "yesterday was your first day at placement i know it must’ve been hard but you made it through im proud of you always remember you have worked hard to be here.", "do you remember the first day we met put my are around you as if a part of you knew that we would end up here wanting to spend every moment together.", "it’s the lead up to your staycation don’t stress don’t sweat it will all be fine just take a deep breath.", "i feel from this point on we may not speak as frequently for a few days just know ur always on my mind and i know your going to look stunning in that dress oh and you probably have your hair done now #yum #yourtea # ughhhh", "# birmingham i’m inside you let the festivities begin this is the day you been looking forward too all your friends together celebrating you how life is beautiful enjoy don’t drink too much", "my favourite memory or one of them is the day we spent in the park together even though you barely knew me you still paid for an uber for me and to this day i remember how giddy i was on my way home after our little kiss.", "what does it mean to feel as though someone is you rib and yet you’re not anything i feel as though that’s a special type of love and i think we posses anywho you beautiful just in case no one told you that today", "ahhh man it’s almost your birthday are you excited i feel as though you are auntie i don’t know if we have spoken today but the song of the day is worth the wait by mahfouz", "i miss the days when i would come leicester and we would bed rot all day watching and eating what ever but being appreciative of each others presence not wanting to let go that’s a story that we can hopefully tell later on", "two days shit mun time flies when ur having fun but did i spell flies right in not too sure might be ur last night in birmingham i think i hope you enjoyed can’t wait to hear all about it", "5201314", "happy birthday the the most beautiful amazing gorgeous special person in the whole wide world the person i yearn for and would die for it’s been a year hasn’t it but we thank God every single day that he has allowed you to be in my life and kept you here for this long your special your amazing your wonderful and your whimsically beautiful never change stay strong stay beautiful always be true to yourself your truly sibie"];
+const YEAR = 2026;
+const MONTH = 11;
+const STORE = 'omotorera-birthday-opened-2026-v1';
+const grid = document.getElementById('grid');
+const overlay = document.getElementById('overlay');
+const progress = document.getElementById('progress');
+let opened = [];
+try { const val = JSON.parse(localStorage.getItem(STORE) || '[]'); opened = Array.isArray(val) ? val.filter(n => Number.isInteger(n) && n >= 0 && n < 14) : []; } catch(e) { opened = []; }
+let current = -1, lastTrigger = null, openingTimer = null;
+function ukDate() {
+ const parts = new Intl.DateTimeFormat('en-GB', {timeZone:'Europe/London',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date());
+ const data = Object.fromEntries(parts.map(p=>[p.type,p.value]));
+ return Number(`${data.year}${data.month}${data.day}`);
+}
+function unlockDate(i) {return YEAR*10000 + MONTH*100 + (i+1);}
+function unlocked(i) {return ukDate() >= unlockDate(i);}
+function ukDayLabel(i) {return `${i+1} November`;}
+function writeProgress() {
+ const count = new Set(opened).size;
+ document.getElementById('progressFill').style.width = `${100*count/14}%`;
+ progress.setAttribute('aria-valuenow', String(count));
+ document.getElementById('progressText').textContent = count === 14 ? 'Every letter opened. Every word meant. ♡' : `${count} of 14 letters opened`;
+ const today = ukDate();
+ let text = '';
+ if (today < 20261101) text = 'Your first little door opens on 1 November ♡';
+ else if (today < 20261114) text = `${14 - (today % 100)} ${14 - (today % 100) === 1 ? 'day' : 'days'} until your birthday ♡`;
+ else if (today === 20261114) text = 'Happy birthday, Omotorera! ♡';
+ else text = 'Fourteen letters, all yours to keep ♡';
+ document.getElementById('countdown').textContent = text;
+}
+function render() {
+ grid.replaceChildren();
+ messages.forEach((_,i)=>{
+   const available = unlocked(i), wasOpened = opened.includes(i);
+   const button = document.createElement('button');
+   button.type='button';
+   button.className=`door ${available?'unlocked':'locked'} ${wasOpened?'opened':''} ${i===13?'birthday':''}`;
+   button.disabled=!available;
+   button.setAttribute('aria-label', available ? `Open letter ${i+1}, ${ukDayLabel(i)}` : `Letter ${i+1} locked until ${ukDayLabel(i)}`);
+   const inner = document.createElement('span');inner.className='interior';inner.setAttribute('aria-hidden','true');
+   inner.innerHTML=`<span class="note-icon">${i===13?'🎂':'💌'}</span><span class="interior-label">${wasOpened?'Read again':'Open letter'}<br>♡</span>`;
+   const front=document.createElement('span');front.className='door-panel';front.setAttribute('aria-hidden','true');
+   front.innerHTML=`<span class="day-tag">Day</span><span class="day-number">${String(i+1).padStart(2,'0')}</span><span class="date-tag">${ukDayLabel(i)}</span><span class="lock-icon">${available?'♡':'🔒'}</span>`;
+   button.append(inner,front);
+   button.addEventListener('click',()=>openLetter(i,button));
+   grid.appendChild(button);
+ });
+ writeProgress();
+}
+function openLetter(i,button){
+ if(!unlocked(i)) return;
+ lastTrigger=button;
+ if(!opened.includes(i)){
+  opened.push(i);
+  try{localStorage.setItem(STORE,JSON.stringify(opened));}catch(e){}
+ }
+ if(!button.classList.contains('opened')){
+   button.classList.add('opening');
+   openingTimer=setTimeout(()=>showLetter(i),690);
+ } else showLetter(i);
+ writeProgress();
+}
+function showLetter(i){
+ clearTimeout(openingTimer);openingTimer=null;
+ current=i;
+ document.getElementById('letterIcon').textContent=i===13?'🎂':'💌';
+ document.getElementById('letterDate').textContent=ukDayLabel(i);
+ document.getElementById('letterTitle').textContent=i===13?'Happy Birthday, Omotorera!':`Day ${i+1} — A little letter for you`;
+ const text=document.getElementById('letterText');text.textContent=messages[i];
+ text.classList.toggle('special-code',i===12);
+ const nextIndex=messages.findIndex((_,j)=>j>i&&unlocked(j));
+ document.getElementById('next').textContent=nextIndex>=0?'Open the next letter →':'Close this letter ♡';
+ document.getElementById('next').onclick=()=>{
+   closeLetter();
+   if(nextIndex>=0) {
+    const nextButton=grid.children[nextIndex];
+    openLetter(nextIndex,nextButton);
+   }
+ };
+ overlay.classList.add('visible');overlay.setAttribute('aria-hidden','false');
+ document.body.style.overflow='hidden';
+ document.getElementById('close').focus();
+}
+function closeLetter(){
+ if(!overlay.classList.contains('visible'))return;
+ overlay.classList.remove('visible');overlay.setAttribute('aria-hidden','true');
+ document.body.style.overflow='';
+ const index=current;
+ render();
+ if(index>=0 && grid.children[index])grid.children[index].focus();
+ current=-1;
+}
+document.getElementById('close').addEventListener('click',closeLetter);
+overlay.addEventListener('click',e=>{if(e.target===overlay)closeLetter();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLetter();});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!overlay.classList.contains('visible'))render();});
+setInterval(()=>{if(!overlay.classList.contains('visible'))render();},60000);
+render();
+</script>
+</body>
+</html>
